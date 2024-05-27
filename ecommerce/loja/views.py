@@ -1,10 +1,13 @@
 from django.shortcuts import render
+from .models import *
 
 def homepage(request):
     return render(request,"homepage.html")
 
 def lojas(request):
-    return render(request,"lojas.html")
+    produtos = Produto.objects.all()
+    context = {"produtos" : produtos}
+    return render(request,"lojas.html", context)
 
 def carrinho(request):
     return render(request,"carrinho.html")
