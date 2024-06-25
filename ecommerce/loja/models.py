@@ -61,3 +61,10 @@ class ItensPedido(models.Model):
     quantidade = models.IntegerField(default=0)
     pedido = models.ForeignKey(Pedido,null=True, blank=True, on_delete=models.SET_NULL )
 
+class Banners(models.Model):
+    imagem= models.ImageField(null=True, blank=True)
+    link_destino= models.CharField(max_length=400,null=True,blank=True)
+    ativo = models.BooleanField(default=False)
+    def __str__(self):
+        return str(self.link_destino)
+    

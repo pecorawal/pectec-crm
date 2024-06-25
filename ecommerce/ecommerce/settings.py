@@ -132,3 +132,16 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 MEDIA_URL = "imagens/"
 
 DEFAULT_AUTO_FIELD =  'django.db.models.BigAutoField'
+
+
+
+
+python from django.contrib.auth.models import User
+   
+   # Substitua 'username' pelo nome de usuário do superusuário
+   user = User.objects.get(username='consultoriapectec@gmail.com')
+   
+   # Substitua 'new_password' pela nova senha
+   user.set_password('pecorit0')
+   
+   user.save()
